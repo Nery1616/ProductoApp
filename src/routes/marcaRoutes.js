@@ -20,10 +20,10 @@ class RouteMarca {
     this.router.get("/:id", this.controller.getMarcaById.bind(this.controller));
 
     // Actualizar marca
-    this.router.put("/:id", this.controller.updateMarca.bind(this.controller));
+    this.router.put("/:id", this.controller.updateMarcaById.bind(this.controller));
 
     // Eliminar marca
-    this.router.delete("/:id", this.controller.deleteMarca.bind(this.controller));
+    this.router.delete("/:id", this.controller.deleteMarcaById.bind(this.controller));
   }
 }
 

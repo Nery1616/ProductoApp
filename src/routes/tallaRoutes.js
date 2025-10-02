@@ -32,14 +32,14 @@ class RouteTalla{
         })
         this.router.put("/:id",(req,res)=>{
             try{
-                this.controller.updateTalla(req,res);
+                this.controller.updateTallaById(req,res);
             }catch(err){
                 res.status(500).json({ error: "Error en el servidor" });
             }
         })
         this.router.delete("/:id",(req,res)=>{
             try{
-                this.controller.deleteTalla(req,res);
+                this.controller.deleteTallaById(req,res);
             }catch(err){
                 res.status(500).json({ error: "Error en el servidor" });
             }

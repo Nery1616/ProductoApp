@@ -49,7 +49,7 @@ class CategoriaController {
     }
   }
 
-  async updateCategoria(req, res) {
+  async updateCategoriaById(req, res) {
 
     const { id } = req.params;
     const { nombre } = req.body;
@@ -79,7 +79,7 @@ class CategoriaController {
     }
   }
 
-  async deleteCategoria(req, res) {
+  async deleteCategoriaById(req, res) {
 
     const { id } = req.params;
 

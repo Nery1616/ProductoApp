@@ -172,7 +172,7 @@ class ProductoController {
     }
   }
 
-  async updateProducto(req, res) {
+  async updateProductoById(req, res) {
     const id = req.params.id;
     const { nombre, descripcion, precio, marcaId, categoriaId} = req.body;
 
@@ -212,7 +212,7 @@ class ProductoController {
     }
   }
 
-  async deleteProducto(req, res) {
+  async deleteProductoById(req, res) {
     const id = req.params.id;
 
     try {

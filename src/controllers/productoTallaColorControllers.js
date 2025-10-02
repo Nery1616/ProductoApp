@@ -147,7 +147,7 @@ class ProductoTallaController {
         }
     }
 
-    async updateProductoTalla(req, res) {
+    async updateProductoTallaById(req, res) {
         const id = req.params.id;
         const { stock } = req.body;
 
@@ -172,7 +172,7 @@ class ProductoTallaController {
         }
     }
 
-    async deleteProductoTalla(req, res) {
+    async deleteProductoTallaById(req, res) {
         const id = req.params.id;
 
         try {

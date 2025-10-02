@@ -53,7 +53,7 @@ class TallaController {
     }
   }
 
-  async updateTalla(req, res) {
+  async updateTallaById(req, res) {
 
     const { id } = req.params;
     const { valor } = req.body;
@@ -83,7 +83,7 @@ class TallaController {
     }
   }
 
-  async deleteTalla(req, res) {
+  async deleteTallaById(req, res) {
     const { id } = req.params;
 
     try {

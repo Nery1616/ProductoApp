@@ -17,9 +17,9 @@ class RouteCategoria {
     // Obtener una categoría por ID
     this.router.get("/:id", this.controller.getCategoriaById.bind(this.controller));
     // Actualizar una categoría
-    this.router.put("/:id", this.controller.updateCategoria.bind(this.controller));
+    this.router.put("/:id", this.controller.updateCategoriaById.bind(this.controller));
     // Eliminar una categoría
-    this.router.delete("/:id", this.controller.deleteCategoria.bind(this.controller));
+    this.router.delete("/:id", this.controller.deleteCategoriaById.bind(this.controller));
   }
 }
 

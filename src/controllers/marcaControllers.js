@@ -51,7 +51,7 @@ class MarcaController {
     }
   }
 
-  async updateMarca(req, res) {
+  async updateMarcaById(req, res) {
     const { id } = req.params;
     const { nombre } = req.body;
 
@@ -84,7 +84,7 @@ class MarcaController {
     }
   }
 
-  async deleteMarca(req, res) {
+  async deleteMarcaById(req, res) {
 
     const { id } = req.params;
 

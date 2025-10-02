@@ -54,7 +54,7 @@ class ColorController {
     }
   }
 
-  async updateColor(req, res) {
+  async updateColorById(req, res) {
 
     const { id } = req.params;
     const { nombre, codigoHex } = req.body;
@@ -88,7 +88,7 @@ class ColorController {
     }
   }
 
-  async deleteColor(req, res) {
+  async deleteColorById(req, res) {
     const { id } = req.params;
 
     try {

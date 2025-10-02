@@ -20,10 +20,10 @@ class RouteProducto {
     this.router.get("/:id", this.controller.getProductoById.bind(this.controller));
 
     // Actualizar un producto
-    this.router.put("/:id", this.controller.updateProducto.bind(this.controller));
+    this.router.put("/:id", this.controller.updateProductoById.bind(this.controller));
 
     // Eliminar un producto
-    this.router.delete("/:id", this.controller.deleteProducto.bind(this.controller));
+    this.router.delete("/:id", this.controller.deleteProductoById.bind(this.controller));
   }
 }
 

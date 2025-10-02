@@ -20,10 +20,10 @@ class RouteColor {
     this.router.get("/:id", this.controller.getColorById.bind(this.controller));
 
     // Actualizar un color
-    this.router.put("/:id", this.controller.updateColor.bind(this.controller));
+    this.router.put("/:id", this.controller.updateColorById.bind(this.controller));
 
     // Eliminar un color
-    this.router.delete("/:id", this.controller.deleteColor.bind(this.controller))
+    this.router.delete("/:id", this.controller.deleteColorById.bind(this.controller))
   }
 }
 

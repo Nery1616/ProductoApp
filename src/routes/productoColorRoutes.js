@@ -67,7 +67,7 @@ class RouteProductoColor {
 
     // Obtener todos los colores
     this.router.get("/", (req, res) => {
-      this.controller.getProductoColor(req, res);
+      this.controller.getProductoColores(req, res);
     });
 
     // Obtener color por ID
@@ -104,7 +104,7 @@ class RouteProductoColor {
         }
 
         req.body.imagenUrl = imagenUrl;
-        await this.controller.updateProductoColor(req, res);
+        await this.controller.updateProductoColorById(req, res);
       } catch (err) {
         console.error("Error al actualizar imagen en Cloudinary:", err.message);
         res.status(500).send({ message: "Error al actualizar imagen en Cloudinary" });
@@ -113,7 +113,7 @@ class RouteProductoColor {
 
     // Eliminar color
     this.router.delete("/:id", (req, res) => {
-      this.controller.deleteProductoColor(req, res);
+      this.controller.deleteProductoColorById(req, res);
     });
   }
 }

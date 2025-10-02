@@ -112,7 +112,7 @@ class ProductoColorController {
     }
   }
 
-  async updateProductoColor(req, res) {
+  async updateProductoColorById(req, res) {
     const id = req.params.id;
     const imagenUrl = req.body.imagenUrl;
 
@@ -139,7 +139,7 @@ class ProductoColorController {
   }
 
 
-  async deleteProductoColor(req, res) {
+  async deleteProductoColorById(req, res) {
     const id = req.params.id;
 
     try {
