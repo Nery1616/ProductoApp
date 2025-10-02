@@ -3,7 +3,9 @@ const cors = require('cors');
 const path = require('path');
 const { APP_PORT, FRONTEND_URL } = require('./src/config/config.js');
 const db = require('./src/models/index.js'); 
-  
+
+//const scalarExpressApiReference = require('@scalar/express-api-reference');
+
 const RouteCategoria = require('./src/routes/categoriaRoutes.js');
 const RouteProducto = require('./src/routes/productoRoutes.js');
 const RouteMarca = require('./src/routes/marcaRoutes.js');
@@ -43,7 +45,13 @@ class Server {
     new RouteColor(this.app);
     new RouteProductoTallaColor(this.app);
     new RouteProductoColor(this.app);
-  }
+
+   /*   // Documentación Scalar
+  this.app.use('/docs', scalarExpressApiReference({
+    title: 'Documentación de ProductoApp',
+    version: '1.0.0',
+  }));*/
+}
 
   async connectDatabase() {
     try {
