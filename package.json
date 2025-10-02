@@ -19,6 +19,7 @@
   "author": "Nery Aurelio Solis",
   "license": "ISC",
   "dependencies": {
+    "@scalar/express-api-reference": "^0.8.19",
     "axios": "^1.12.2",
     "cloudinary": "^2.7.0",
     "cors": "^2.8.5",
