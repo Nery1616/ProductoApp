@@ -1,5 +1,0 @@
-{
-  "language": "javascript",
-  "framework": "express",
-  "source": "./src/routes"
-}
