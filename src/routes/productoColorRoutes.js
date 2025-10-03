@@ -20,6 +20,35 @@ class RouteProductoColor {
 
   registerRoutes() {
     // Crear color con imagen
+    /**
+   * @swagger
+   * /api/productoColor:
+   *   post:
+   *     summary: Crear relación producto-color con imagen
+   *     tags: [ProductoColor]
+   *     requestBody:
+   *       required: true
+   *       content:
+   *         multipart/form-data:
+   *           schema:
+   *             type: object
+   *             properties:
+   *               productoId:
+   *                 type: integer
+   *               colorId:
+   *                 type: integer
+   *               imagen:
+   *                 type: string
+   *                 format: binary
+   *     responses:
+   *       201:
+   *         description: Relación creada con imagen
+   *       400:
+   *         description: Error al subir imagen
+   *       500:
+   *         description: Error interno
+   */
+
     this.router.post("/", uploadSingle, async (req, res) => {
       try {
         let imagenUrl = null;
@@ -66,16 +95,96 @@ class RouteProductoColor {
     });
 
     // Obtener todos los colores
+    /**
+   * @swagger
+   * /api/productoColor:
+   *   get:
+   *     summary: Obtener todas las relaciones producto-color
+   *     tags: [ProductoColor]
+   *     responses:
+   *       200:
+   *         description: Lista de relaciones producto-color
+   *         content:
+   *           application/json:
+   *             schema:
+   *               type: array
+   *               items:
+   *                 type: object
+   *                 properties:
+   *                   id:
+   *                     type: integer
+   *                   productoId:
+   *                     type: integer
+   *                   colorId:
+   *                     type: integer
+   *                   imagenUrl:
+   *                     type: string
+   */
+
     this.router.get("/", (req, res) => {
       this.controller.getProductoColores(req, res);
     });
 
     // Obtener color por ID
+      /**
+   * @swagger
+   * /api/productoColor/{id}:
+   *   get:
+   *     summary: Obtener una relación producto-color por ID
+   *     tags: [ProductoColor]
+   *     parameters:
+   *       - in: path
+   *         name: id
+   *         required: true
+   *         schema:
+   *           type: integer
+   *     responses:
+   *       200:
+   *         description: Relación encontrada
+   *       404:
+   *         description: No encontrada
+   */
+
     this.router.get("/:id", (req, res) => {
       this.controller.getProductoColorById(req, res);
     });
 
     // Actualizar color con nueva imagen
+    /**
+   * @swagger
+   * /api/productoColor/{id}:
+   *   put:
+   *     summary: Actualizar relación producto-color con nueva imagen
+   *     tags: [ProductoColor]
+   *     parameters:
+   *       - in: path
+   *         name: id
+   *         required: true
+   *         schema:
+   *           type: integer
+   *     requestBody:
+   *       required: true
+   *       content:
+   *         multipart/form-data:
+   *           schema:
+   *             type: object
+   *             properties:
+   *               productoId:
+   *                 type: integer
+   *               colorId:
+   *                 type: integer
+   *               imagen:
+   *                 type: string
+   *                 format: binary
+   *     responses:
+   *       200:
+   *         description: Relación actualizada
+   *       400:
+   *         description: Error al subir imagen
+   *       500:
+   *         description: Error interno
+   */
+
     this.router.put("/:id", uploadSingle, async (req, res) => {
       try {
         let imagenUrl = undefined;
@@ -112,6 +221,25 @@ class RouteProductoColor {
     });
 
     // Eliminar color
+    /**
+   * @swagger
+   * /api/productoColor/{id}:
+   *   delete:
+   *     summary: Eliminar una relación producto-color por ID
+   *     tags: [ProductoColor]
+   *     parameters:
+   *       - in: path
+   *         name: id
+   *         required: true
+   *         schema:
+   *           type: integer
+   *     responses:
+   *       204:
+   *         description: Eliminada correctamente
+   *       404:
+   *         description: No encontrada
+   */
+
     this.router.delete("/:id", (req, res) => {
       this.controller.deleteProductoColorById(req, res);
     });

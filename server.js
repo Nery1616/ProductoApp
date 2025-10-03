@@ -3,6 +3,7 @@ const cors = require('cors');
 const path = require('path');
 const { APP_PORT, FRONTEND_URL } = require('./src/config/config.js');
 const db = require('./src/models/index.js'); 
+const { swaggerUi, swaggerSpec } = require('./swagger');
 
 //const scalarExpressApiReference = require('@scalar/express-api-reference');
 
@@ -46,6 +47,8 @@ class Server {
     new RouteProductoTallaColor(this.app);
     new RouteProductoColor(this.app);
 
+    // Documentación Swagger
+    this.app.use('/api-docs', swaggerUi.serve, swaggerUi.setup(swaggerSpec));
    /*   // Documentación Scalar
   this.app.use('/docs', scalarExpressApiReference({
     title: 'Documentación de ProductoApp',
